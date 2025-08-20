@@ -21,12 +21,13 @@ def load_data():
 df_group, df_country, df_platform, df_regional, df_bayobab, df_fintech, df_pricingfx, df_capex = load_data()
 
 # HEADER
-st.title("MTN Group — Strategic Analytics Dashboard")
-st.caption("Real figures sourced from MTN H1 2025 SENS and FY-24 results. Replace/append with your own CSVs as needed.")
+st.title("📊 MTN Group: Strategic Analytics Dashboard")
+st.markdown("An interactive, data-driven view into MTN's H1 2025 performance covering revenue, MoMo, Bayobab, regional insights, pricing, FX, and capex.")
+st.caption("Scroll to the bottom to know more about the data professional behind this highly talented analytical project.")
 
 # SIDEBAR
 st.sidebar.header("Controls")
-view = st.sidebar.radio("View", ["Executive KPIs", "Country Deep-Dive", "Fintech & Data", "Regional Performance", "Bayobab Infra", "Pricing & FX", "Capex & Infra", "Scenario Lab", "Upload More Data"])
+view = st.sidebar.radio("View", ["Executive KPIs", "Country Deep-Dive", "Fintech & Data", "Regional Performance", "Bayobab Infra", "Pricing & FX", "Capex & Infra", "Scenario Lab", "Data-driven Insights"])
 currency = st.sidebar.selectbox("Reporting currency (display only)", ["ZAR", "USD"])
 
 # EXECUTIVE KPIs
@@ -117,22 +118,22 @@ if view == "Regional Performance":
 if view == "Bayobab Infra":
     st.subheader("Bayobab — Infrastructure & Wholesale (H1 2025)")
     st.dataframe(df_bayobab)
-    st.markdown("""Bayobab is MTN's transport & wholesale arm. Use these figures to model
+    st.markdown("""Bayobab is MTN's transport & wholesale arm. You can use these figures to model
                  cross-border capacity, wholesale pricing, and fibre roll-out economics.""")
 
 # PRICING & FX
 if view == "Pricing & FX":
     st.subheader("Pricing, ARPU & FX Headwinds")
     st.dataframe(df_pricingfx)
-    st.markdown("""Use the Nigeria rows to build FX scenarios; use the South Africa rows for ARPU
+    st.markdown("""You can use the Nigeria rows to build FX scenarios; use the South Africa rows for ARPU
                  and usage-based elasticity sims.""")
 
 # CAPEX & INFRA
 if view == "Capex & Infra":
     st.subheader("Capex & Infrastructure Deployment")
     st.dataframe(df_capex)
-    st.markdown("""Capex figures show H1 spend and FY guidance. Add your own per-country capex CSVs
-                 to extend this (e.g., per-opco site counts, 4G/5G rollouts).""")
+    st.markdown("""Capex figures show H1 spend and FY guidance. You can go ahead to add your own per-country capex CSVs
+                 to extend this (e.g per-opco site counts, 4G/5G rollouts).""")
 
 # SCENARIO LAB (unchanged)
 if view == "Scenario Lab":
@@ -155,18 +156,35 @@ if view == "Scenario Lab":
 
 
 # UPLOAD
-if view == "Upload More Data":
-    st.subheader("Append or replace datasets")
-    st.write("You can upload CSVs that match or extend the schemas below. They will be merged in memory.")
-    up = st.file_uploader("Upload CSV(s)", type=["csv"], accept_multiple_files=True)
-    if up:
-        for f in up:
-            try:
-                df = pd.read_csv(f)
-                st.success(f"Loaded {f.name} — {df.shape[0]} rows, {df.shape[1]} cols.")
-                st.dataframe(df.head(20))
-            except Exception as e:
-                st.error(f"Failed to load {f.name}: {e}")
+if view == "Data-driven Insights":
+    st.subheader("MTN H1 2025 Data-driven Insights")
+    st.write("This report gives a well detailed analytical insights for deep financial, operational, and strategic insights from MTN Group’s H1 2025 results. It includes real datasets (revenue, fintech, capex, Bayobab, FX/pricing, and regional KPIs), dynamic visualizations, and a detailed Word report designed to support data-driven decision-making and telecom strategy.")
 
+    # Word Report Download
+    st.markdown("### \U0001F4DD Download Complete MTN H1 Strategic Insights Report")
+    with open("report/Complete_MTN_Strategic_Analytics_Report.docx", "rb") as doc_file:
+        st.download_button(
+            label="\U0001F4E5 Download Full Word Report",
+            data=doc_file,
+            file_name="Complete MTN Strategic Analytics Report.docx",
+            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        )
+
+# Footer
 st.markdown("---")
-st.markdown("**Sources:** MTN Group H1 2025 SENS announcement; FY-24 results transcript. Replace with your own detailed disclosures for deeper analysis.")
+st.markdown("# About the Developer")
+
+st.image("image/My image.jpg", width=250)
+st.markdown("## **Kajola Gbenga**")
+
+st.markdown(
+    """
+\U0001F4C7 Certified Data Analyst | Certified Data Scientist | Certified SQL Programmer | Mobile App Developer | AI/ML Engineer
+
+\U0001F517 [LinkedIn](https://www.linkedin.com/in/kajolagbenga)  
+\U0001F4DC [View My Certifications & Licences](https://www.datacamp.com/portfolio/kgbenga234)  
+\U0001F4BB [GitHub](https://github.com/prodigy234)  
+\U0001F310 [Portfolio](https://kajolagbenga.netlify.app/)  
+\U0001F4E7 k.gbenga234@gmail.com
+"""
+)
