@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -24,11 +23,6 @@ df_group, df_country, df_platform, df_regional, df_bayobab, df_fintech, df_prici
 st.title("📊 MTN Group: Strategic Analytics Dashboard")
 st.markdown("An interactive, data-driven view into MTN's H1 2025 performance covering revenue, MoMo, Bayobab, regional insights, pricing, FX, and capex.")
 st.caption("Scroll to the bottom to know more about the data professional behind this highly talented analytical project.")
-
-# # SIDEBAR
-# st.sidebar.header("Controls")
-# view = st.sidebar.radio("View", ["Executive KPIs", "Country Deep-Dive", "Fintech & Data", "Regional Performance", "Bayobab Infra", "Pricing & FX", "Capex & Infra", "Scenario Lab", "Data-driven Insights"])
-# currency = st.sidebar.selectbox("Reporting currency (display only)", ["ZAR", "USD"])
 
 # --- Initialize Defaults BEFORE widgets ---
 if "view" not in st.session_state:
