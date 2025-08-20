@@ -25,10 +25,40 @@ st.title("📊 MTN Group: Strategic Analytics Dashboard")
 st.markdown("An interactive, data-driven view into MTN's H1 2025 performance covering revenue, MoMo, Bayobab, regional insights, pricing, FX, and capex.")
 st.caption("Scroll to the bottom to know more about the data professional behind this highly talented analytical project.")
 
-# SIDEBAR
+# # SIDEBAR
+# st.sidebar.header("Controls")
+# view = st.sidebar.radio("View", ["Executive KPIs", "Country Deep-Dive", "Fintech & Data", "Regional Performance", "Bayobab Infra", "Pricing & FX", "Capex & Infra", "Scenario Lab", "Data-driven Insights"])
+# currency = st.sidebar.selectbox("Reporting currency (display only)", ["ZAR", "USD"])
+
+# --- Initialize Defaults BEFORE widgets ---
+if "view" not in st.session_state:
+    st.session_state.view = "Executive KPIs"
+if "currency" not in st.session_state:
+    st.session_state.currency = "ZAR"
+
+# --- Sidebar ---
 st.sidebar.header("Controls")
-view = st.sidebar.radio("View", ["Executive KPIs", "Country Deep-Dive", "Fintech & Data", "Regional Performance", "Bayobab Infra", "Pricing & FX", "Capex & Infra", "Scenario Lab", "Data-driven Insights"])
-currency = st.sidebar.selectbox("Reporting currency (display only)", ["ZAR", "USD"])
+
+view = st.sidebar.radio(
+    "View", 
+    ["Executive KPIs", "Country Deep-Dive", "Fintech & Data", "Regional Performance", 
+     "Bayobab Infra", "Pricing & FX", "Capex & Infra", "Scenario Lab", "Data-driven Insights"],
+    key="view"
+)
+
+currency = st.sidebar.selectbox(
+    "Reporting currency (display only)", 
+    ["ZAR", "USD"], 
+    key="currency"
+)
+
+# --- Reset Button ---
+if st.sidebar.button("🔄 Reset Dashboard"):
+    for key in ["view", "currency"]:
+        if key in st.session_state:
+            st.session_state.pop(key)  # removes key safely
+    st.rerun()
+
 
 # EXECUTIVE KPIs
 if view == "Executive KPIs":
