@@ -197,39 +197,19 @@ if view == "Data-driven Insights":
 
 # Footer
 st.markdown("---")
-st.markdown("### Prepared By")
+st.markdown("# Developed By")
 
-st.image("image/My image.jpg", width=200)
-st.markdown("**Kajola Gbenga** – Certified Business & Data Analyst")
+st.image("image/My image.jpg", width=250)
+st.markdown("## **Kajola Gbenga**")
 
 st.markdown(
     """
-📊 Certified Data Scientist | SQL Database Programmer | Mobile App Developer | AI/ML Engineer  
+\U0001F4C7 Certified Business & Data Analyst | Certified Data Scientist | Certified SQL Database Programmer | AI/ML Engineer
 
-🔗 [LinkedIn](https://www.linkedin.com/in/kajolagbenga)  
-📜 [Certifications](https://www.datacamp.com/portfolio/kgbenga234)  
-💻 [GitHub](https://github.com/prodigy234)  
-🌍 [Portfolio](https://kajolagbenga.netlify.app/)  
-✉️ k.gbenga234@gmail.com
+\U0001F517 [LinkedIn](https://www.linkedin.com/in/kajolagbenga)  
+\U0001F4DC [View My Certifications & Licences](https://www.datacamp.com/portfolio/kgbenga234)  
+\U0001F4BB [GitHub](https://github.com/prodigy234)  
+\U0001F310 [Portfolio](https://kajolagbenga.netlify.app/)  
+\U0001F4E7 k.gbenga234@gmail.com
 """
 )
-
-
-# # Footer
-# st.markdown("---")
-# st.markdown("# Developed By")
-
-# st.image("image/My image.jpg", width=250)
-# st.markdown("## **Kajola Gbenga**")
-
-# st.markdown(
-#     """
-# \U0001F4C7 Certified Business & Data Analyst | Certified Data Scientist | Certified SQL Database Programmer | Mobile App Developer | AI/ML Engineer
-
-# \U0001F517 [LinkedIn](https://www.linkedin.com/in/kajolagbenga)  
-# \U0001F4DC [View My Certifications & Licences](https://www.datacamp.com/portfolio/kgbenga234)  
-# \U0001F4BB [GitHub](https://github.com/prodigy234)  
-# \U0001F310 [Portfolio](https://kajolagbenga.netlify.app/)  
-# \U0001F4E7 k.gbenga234@gmail.com
-# """
-# )
