@@ -203,7 +203,7 @@ st.markdown("## **Kajola Gbenga**")
 
 st.markdown(
     """
-\U0001F4C7 Certified Data Analyst | Certified Data Scientist | Certified SQL Programmer | Mobile App Developer | AI/ML Engineer
+\U0001F4C7 Certified Business & Data Analyst | Certified Data Scientist | Certified SQL Programmer | Mobile App Developer | AI/ML Engineer
 
 \U0001F517 [LinkedIn](https://www.linkedin.com/in/kajolagbenga)  
 \U0001F4DC [View My Certifications & Licences](https://www.datacamp.com/portfolio/kgbenga234)  
